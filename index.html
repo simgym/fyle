@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tax Calculator</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form id="taxForm">
+        <div class="form-group">
+          <div>
+            <label for="income">Gross Annual Income (in Lakhs):</label>
+          </div>
+          <div class="input-wrapper">
+            <input type="text" class="form-control" id="income" required />
+            <div class="error-icon" id="incomeErrorIcon">!</div>
+          </div>
+          <div id="incomeError" class="error-tooltip">
+            This field should not be empty
+          </div>
+        </div>
+        <div class="form-group">
+          <div><label for="deductions">Extra Income (in Lakhs):</label></div>
+          <div class="input-wrapper">
+            <input type="text" class="form-control" id="deductions" required />
+            <div class="error-icon" id="deductionsErrorIcon">!</div>
+          </div>
+          <div id="deductionsError" class="error-tooltip">
+            This field should not be empty
+          </div>
+        </div>
+        <div class="form-group">
+          <div><label for="age">Age Group:</label></div>
+          <div class="input-wrapper">
+            <select class="form-control" id="age" required>
+              <option value="">Select Age Group</option>
+              <option value="<40">&lt;40</option>
+              <option value="40-60">&ge;40 &lt;60</option>
+              <option value=">=60">&ge;60</option>
+            </select>
+            <div class="error-icon" id="ageErrorIcon">!</div>
+          </div>
+          <div id="ageError" class="error-tooltip">
+            This field should not be empty
+          </div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label for="totalDeductions">Total Deductions (in Lakhs):</label>
+          </div>
+          <div class="input-wrapper">
+            <input
+              type="text"
+              class="form-control"
+              id="totalDeductions"
+              required
+            />
+            <div class="error-icon" id="totalDeductionsErrorIcon">!</div>
+          </div>
+          <div id="totalDeductionsError" class="error-tooltip">
+            This field should not be empty
+          </div>
+        </div>
+        <div class="btn-wrapper">
+          <button type="submit" class="btn">Calculate Tax</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="resultModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="modalBody"></div>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
